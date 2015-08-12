@@ -23,16 +23,29 @@
 						<label for="toggleAll">Toggle All:</label>
 						<input class="toggle-all" type="checkbox" v-model="allDone" name="toggleAll">
 					</div>
-					<ul class="todo-list">
-						<li class="todo" v-repeat="todo: filteredTodos" v-class="completed: todo.completed, editing: todo == editedTodo">
-							<div class="view">
-								<input class="toggle" type="checkbox" v-model="todo.completed">
-								<label v-on="dblclick: editTodo(todo)">{{todo.title}}</label>
-								<button class="destroy" v-on="click: removeTodo(todo)">Remove</button>
-							</div>
-							<input class="edit" type="text" v-model="todo.title" v-todo-focus="todo == editedTodo" v-on="blur: doneEdit(todo), keyup: doneEdit(todo) | key 'enter', keyup: cancelEdit(todo) | key 'esc'">
-						</li>
-					</ul>
+
+					<table class="table todo-table">
+						<thead>
+							<tr>
+								<th>Task</th>
+								<th>Options</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr v-repeat="todo: filteredTodos" v-class="completed: todo.completed, editing: todo == editedTodo">
+								<td>
+									<div class="view">
+										<input class="toggle" type="checkbox" v-model="todo.completed">
+										<label v-on="dblclick: editTodo(todo)">{{todo.title}}</label>				
+									</div>
+									<input class="edit" type="text" v-model="todo.title" v-todo-focus="todo == editedTodo" v-on="blur: doneEdit(todo), keyup: doneEdit(todo) | key 'enter', keyup: cancelEdit(todo) | key 'esc'">
+								</td>
+								<td>
+									<button class="view destroy" v-on="click: removeTodo(todo)">Remove</button>	
+								</td>
+							</tr>
+						</tbody>
+					</table>
 				</section>
 
 				<footer class="footer" v-show="todos.length" v-cloak>
@@ -45,6 +58,8 @@
 						Clear completed
 					</button>
 				</footer>
+
+				<pre>{{ $data | json }}</pre>
 			</section>
 		</div>
 		
