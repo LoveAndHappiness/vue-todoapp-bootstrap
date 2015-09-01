@@ -1,0 +1,40 @@
+
+.todo-list {
+    .todo {
+        height: 55px;
+        line-height: 35px;
+
+        .view {
+            .options {
+                float: right;              
+            }
+        }
+
+        .edit {
+            display: none;
+            margin-bottom: 0px;
+        }
+    } 
+
+    .todo.editing {
+        .view {
+            display: none;
+        }
+        .edit {
+            display: block;
+        }
+    }
+
+    .todo.completed {
+        .view {
+            color: #d9d9d9;
+            text-decoration: line-through;            
+        }
+    }
+}
+
+footer {
+    .filters {
+        padding: 10px 0px;
+    } 
+}

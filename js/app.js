@@ -115,6 +115,16 @@
 				todo.title = this.beforeEditCache;
 			},
 
+			toggleTodoCompletion: function (todo) {
+				todo.completed = ! todo.completed;
+			},
+
+			completeAll: function () {
+				this.todos = this.todos.filter(function (todo) {
+					return todo.completed = true;
+				});
+			},
+
 			removeCompleted: function () {
 				this.todos = filters.active(this.todos);
 			}

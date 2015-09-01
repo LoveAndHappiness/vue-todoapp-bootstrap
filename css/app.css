@@ -1,34 +1,21 @@
-.hidden {
+.todo-list .todo {
+  height: 55px;
+  line-height: 35px; }
+  .todo-list .todo .view .options {
+    float: right; }
+  .todo-list .todo .edit {
     display: none;
-}
+    margin-bottom: 0px; }
 
-/* show edit field when edited */
-.todo-list li.editing div.edit {
-    display: block;
-}
+.todo-list .todo.editing .view {
+  display: none; }
 
-/* Hide display field when edited */
-.todo-list li.editing .view {
-    display: none;
-}
+.todo-list .todo.editing .edit {
+  display: block; }
 
-/* completed todo */
-.todo-list li.completed div {
-    color: #d9d9d9;
-    text-decoration: line-through;
-}
+.todo-list .todo.completed .view {
+  color: #d9d9d9;
+  text-decoration: line-through; }
 
-/* Options Area */
-.todo-list li div.view div div.options {
-    float: right;
-}
-
-
-/* Hide edit input field */
-.todo-list li div.edit {
-    display: none;
-}
-
-input[type=checkbox].toggle {
-    float: left;
-}
+footer .filters {
+  padding: 10px 0px; }
