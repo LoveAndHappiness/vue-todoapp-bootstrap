@@ -1,8 +1,9 @@
 /*global Vue, todoStorage */
+/*jslint white: true, browser: true */
 
 (function (exports) {
 
-	'use strict';
+    'use strict';
 
 	var filters = {
 		all: function (todos) {
@@ -120,4 +121,4 @@
 		}
 	});
 
-})(window);
+}(window));
