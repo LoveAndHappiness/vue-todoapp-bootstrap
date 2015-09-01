@@ -3,7 +3,7 @@
 }
 
 /* show edit field when edited */
-.todo-list li.editing .edit {
+.todo-list li.editing div.edit {
     display: block;
 }
 
@@ -13,18 +13,22 @@
 }
 
 /* completed todo */
-.todo-list li.completed label {
+.todo-list li.completed div {
     color: #d9d9d9;
     text-decoration: line-through;
 }
 
-/* Delete Button */
-.todo-list li .destroy {
+/* Options Area */
+.todo-list li div.view div div.options {
     float: right;
 }
 
 
 /* Hide edit input field */
-.todo-list li .edit {
+.todo-list li div.edit {
     display: none;
+}
+
+input[type=checkbox].toggle {
+    float: left;
 }
