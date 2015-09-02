@@ -2,7 +2,7 @@
 <html data-framework="vue">
     <head>
         <meta charset="utf-8">
-        <title>Vue.js • TodoMVC</title>
+        <title>Vue Todo App</title>
         <link href="css/bootstrap.css" rel="stylesheet">
         <link rel="stylesheet" href="css/app.css">
         <style> [v-cloak] { display: none; } </style>
@@ -12,7 +12,7 @@
             <div class="todoapp">
                 <div class="row">
                     <div class="col-xs-12">
-                        <h1>Vue Todo</h1>
+                        <h1>Vue Todo App</h1>
                     </div>
                         
                     <div class="col-xs-12">
@@ -29,14 +29,17 @@
                                     v-on         ="keyup:addTodo | key 'enter'">
                             </div>
                         </header>
+                    </div>
+
+                    <div class="col-xs-6">
 
                         <section class="main" v-show="todos.length" v-cloak>
 
                             <ul class="todo-list list-group">
                                 <li class="list-group-item">
-                                    <strong>Todo</strong>
+                                    <span class="list-header">Todo</span class="list-header">
                                     <span class="todo-count">
-                                        <strong v-text="remaining"></strong> {{remaining | pluralize 'item'}} left
+                                        <span v-text="remaining"></span> {{remaining | pluralize 'item'}} left
                                     </span>
                                 </li>
                                 <li 
@@ -50,15 +53,29 @@
                                         </span>
 
                                         <div class="options">
-                                            <button class="btn btn-success btn-xs" v-on="click: toggleTodoCompletion(todo)">
-                                                Complete
+                                            <button 
+                                                type  ="button" 
+                                                class ="btn btn-default"
+                                                v-on  ="click: toggleTodoCompletion(todo)">
+                                                <i class="glyphicon glyphicon-ok"></i>
                                             </button>
-                                            <button class="btn btn-primary btn-xs" v-on="click: editTodo(todo)">
-                                                Edit
+
+                                            <button 
+                                                type  ="button" 
+                                                class ="btn btn-default"
+                                                v-on  ="click: editTodo(todo)">
+                                                
+                                                <i class="glyphicon glyphicon-edit"></i>
+                                            </button>                               
+
+                                            <button 
+                                                type  ="button" 
+                                                class ="btn btn-default" 
+                                                v-on  ="click: removeTodo(todo)">
+
+                                                <i class="glyphicon glyphicon-remove"></i>
                                             </button>
-                                            <button class ="btn btn-danger btn-xs destroy" v-on  ="click: removeTodo(todo)">
-                                                Delete
-                                            </button>                        
+                   
                                         </div>
                                     </div>
 
@@ -99,7 +116,7 @@
                             </div>
                         </footer>                                 
                     </div>
-                    <div class="col-xs-12">
+                    <div class="col-xs-6">
                         <pre>
 {{$data | json }}
                         </pre>

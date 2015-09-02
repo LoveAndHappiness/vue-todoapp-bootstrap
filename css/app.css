@@ -3,6 +3,16 @@
   line-height: 35px; }
   .todo-list .todo .view .options {
     float: right; }
+    .todo-list .todo .view .options button {
+      padding: 0px;
+      margin: 0 7px;
+      border: none; }
+    .todo-list .todo .view .options i.glyphicon-remove {
+      color: darkred; }
+    .todo-list .todo .view .options i.glyphicon-edit {
+      color: #111111; }
+    .todo-list .todo .view .options i.glyphicon-ok {
+      color: green; }
   .todo-list .todo .edit {
     display: none;
     margin-bottom: 0px; }
@@ -19,3 +29,10 @@
 
 footer .filters {
   padding: 10px 0px; }
+
+.list-header {
+  font-size: 20px; }
+
+.todo-count {
+  font-size: 20px;
+  float: right; }

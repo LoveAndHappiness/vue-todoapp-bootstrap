@@ -6,7 +6,25 @@
 
         .view {
             .options {
-                float: right;              
+                float: right;
+                
+                button {
+                    padding: 0px;
+                    margin: 0 7px;
+                    border: none;
+                }
+
+                i.glyphicon-remove {
+                    color: darkred;
+                }
+
+                i.glyphicon-edit {
+                    color: #111111;
+                }
+
+                i.glyphicon-ok {
+                    color: green;
+                }              
             }
         }
 
@@ -37,4 +55,13 @@ footer {
     .filters {
         padding: 10px 0px;
     } 
+}
+
+.list-header {
+    font-size: 20px;
+}
+
+.todo-count {
+    font-size: 20px;
+    float: right;
 }
