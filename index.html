@@ -84,7 +84,7 @@
                                             type         ="text" 
                                             class        ="form-control" 
                                             v-model      ="todo.title" 
-                                            v-todo-focus ="todo == editedTodo" 
+                                            v-todo-focus ="todo == editedTodo"
                                             v-on         ="blur: doneEdit(todo), keyup: doneEdit(todo) | key 'enter', keyup: cancelEdit(todo) | key 'esc'">
                                     </div>
                                 </li>

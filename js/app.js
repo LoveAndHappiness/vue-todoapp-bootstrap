@@ -34,7 +34,7 @@
 			visibility: 'all'
 		},
 
-		// ready hook, watch todos change for data persistence
+		// ready hook, watch todos change<yy0000000000000000000000y for data persistence
 		ready: function () {
 			this.$watch('todos', function (todos) {
 				todoStorage.save(todos);
